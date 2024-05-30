@@ -10,7 +10,7 @@ body{
 }
 
 header{
-    /* border:1px solid red; */
+    border:1px solid red;
     height:100vh;
     width:100vw;
     box-sizing: border-box;
@@ -33,6 +33,7 @@ header{
     margin:auto;
     border-bottom: 4px solid rgb(17, 184, 184);
     border-radius: 2px;
+    position:relative;
     
     
     /* background-color: rgb(235, 235, 235); */
@@ -103,6 +104,9 @@ header{
 #ham{
     color:white;
     filter: invert();
+    position:absolute;
+    transition:all 0.8s;
+       
 }
 
 
@@ -154,10 +158,10 @@ header{
     display: flex;
     align-items: center;
     justify-content: start;
-    padding:0 0px 0 3vw;
+    padding:0 0 0 3vw;
 }
 .container1 .info div{
-    /* border:1px solid red; */
+    border:1px solid red;
     color: white;
     width:80%;
     display: flex;
@@ -379,6 +383,7 @@ form .button button{
     .navbar img{
         display:inline;
         height:20px;
+      
     }
 
     form div div input{
@@ -407,10 +412,40 @@ form .button button{
         transition:all 0.8s;
     }
 
-    .container1 .image img{
-        height:60%;
-        width:60%;
+    .container1{
+        flex-direction: column;
+        align-items: center;
+        height:100vh;
+        border: 1px solid red;
+    }
+
+    .container1 .info{
+        border: 1px solid red;
+        width:100%;
+        justify-content: center;
+    }
+    .container1 .info h1{
+        text-align: center;
+    }
+
+    .container1 .info div{
+        width:100vw
         
+    }
+
+    .container1 .info h3{
+        text-align: center;
+    }
+
+    .container1 .info div p{
+        border: 1px solid red;
+        /* text-align: center; */
+        width:100%;
+    }
+
+    .image{
+        border: 1px solid red;
+
     }
 
 }
@@ -421,6 +456,38 @@ form .button button{
         .container1 .image img{
             height:60%;
             width:90%;
+        
             
+        }
+
+        .container1{
+            flex-direction: column;
+            align-items: center;
+            height:100vh;
+            border: 1px solid red;
+        }
+
+        .container1 .info{
+            border: 1px solid red;
+            width:100%;
+            justify-content: center;
+        }
+        .container1 .info h1{
+            text-align: center;
+        }
+
+        .container1 .info h3{
+            text-align: center;
+        }
+
+        .container1 .info div p{
+            border: 1px solid red;
+            /* text-align: center; */
+            width:100vw;
+        }
+
+        .image{
+            border: 1px solid red;
+
         }
 }
