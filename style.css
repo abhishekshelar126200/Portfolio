@@ -9,8 +9,12 @@ body{
     background-color: rgb(31, 36, 45);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 header{
-    border:1px solid red;
+    /* border:1px solid red; */
     height:100vh;
     width:100vw;
     box-sizing: border-box;
@@ -31,9 +35,12 @@ header{
     display: flex;
     justify-content: center;
     margin:auto;
-    border-bottom: 4px solid rgb(17, 184, 184);
+    /* border-bottom: 4px solid rgb(17, 184, 184); */
     border-radius: 2px;
     position:relative;
+
+    z-index: 1000;
+
     
     
     /* background-color: rgb(235, 235, 235); */
@@ -124,8 +131,8 @@ header{
 
 .container1{
     width:98%;
-    height:80%;
-    margin: auto;
+    height:80vh;
+    margin: 10px auto;
     /* border:1px solid black; */
     display:flex;
     background-color: rgb(31, 36, 45);
@@ -139,29 +146,44 @@ header{
     /* border:1px solid black; */
     width:40%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
-    
+    position: relative;
+    box-shadow: 0px 0px 5px 0px rgb(26, 27, 28);
 }
 
 .container1 .image img{
     height:70%;
     width:70%;
     border-radius: 50%;
-    /* border: 5px solid rgb(17, 184, 184); */
+    /* position:absolute; */
+    animation: moveImage 1s infinite alternate;
+    box-shadow: 0px 0px 20px 0px rgb(17, 184, 184); 
+    
+}
+@keyframes moveImage {
+    0% {
+        transform: translateX(-5%);
+        
+    }
+    70% {
+
+        transform: translateX(0%);
+    }
 }
 
-
 .container1 .info{
-    /* border:1px solid black; */
+    /* border:1px solid red; */
     width:60%;
     display: flex;
     align-items: center;
     justify-content: start;
     padding:0 0 0 3vw;
+    box-shadow: 0px 0px 5px 0px rgb(25, 28, 33);
+
 }
 .container1 .info div{
-    border:1px solid red;
+    /* border:1px solid white; */
     color: white;
     width:80%;
     display: flex;
@@ -175,6 +197,33 @@ header{
 }
 .container1 .info div h3{
     font-size: 4vh;
+    width:20vw;
+    /* border:1px solid white; */
+   
+    
+}
+
+.container1 .info div h3 span{
+    color:rgb(17, 184, 184)
+}
+
+
+.container1 .info div div{
+    overflow: hidden;
+    animation:appear 4s 0s infinite;
+
+}
+
+
+@keyframes appear{
+    0%{
+        width:0%;
+    }
+    100%{
+        width:50%;
+    }
+
+   
 }
 
 .container1 .info div p{
@@ -212,10 +261,64 @@ main{
 
 
 main .projects{
-    height:70vh;
-    width:100%;
-    border:1px solid black;
+    display:flex;
+    gap:20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top:10px;
+    /* border:1px solid blue; */
 }
+
+#projects{
+    padding:10px 0;
+    text-align: center;
+    color:white;
+    /* border:1px solid blue; */
+    margin:70px 0 0 0;
+}
+
+#projects span{
+    color:rgb(17, 184, 184);
+}
+
+main .projects .card{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:300px;
+    width:350px;
+    justify-content: space-around;
+    padding:0 15px;
+    border-radius: 10px;
+    /* background-color: aliceblue; */
+    background-color: rgb(50, 57, 70);
+    color:white;
+    box-shadow: 0px 0px 5px 0px rgb(17, 184, 184); 
+}
+
+main .projects .card:hover{
+    height:320px;
+    width:370px;
+    
+}
+
+.projects .card img{
+    height:100px;
+    width:150px;
+}
+
+.projects .card a{
+    text-decoration: none;
+    /* border: 1px solid black; */
+    padding:10px;
+    border-radius: 10px;
+    color:white;
+    /* background-color: rgb(255, 63, 63); */
+    background-color: rgb(17, 184, 184);
+}
+
+
 
 main .internship{
     display:flex;
@@ -223,6 +326,14 @@ main .internship{
     flex-wrap: wrap;
     justify-content: center;
     margin-top:10px;
+    /* border:1px solid red; */
+
+}
+
+#internship_h{
+    text-align: center;
+    padding:10px 0;
+    color:white;
 }
 
 main .internship .card{
@@ -239,18 +350,18 @@ main .internship .card{
     
 }
 
-.card img{
+.internship .card img{
     height:100px;
-    width:100px;
+    width:150px;
 }
 
-.card a{
+.internship .card a{
     text-decoration: none;
     /* border: 1px solid black; */
     padding:10px;
     border-radius: 10px;
     color:white;
-    background-color: rgb(255, 63, 63);
+    /* background-color: rgb(255, 63, 63); */
 }
 
 
@@ -350,6 +461,10 @@ form .button button{
 }
 
 @media (max-width:1000px){
+
+    main .projects .card{
+        height:400px;
+    }
     
     header .navbar ul{
         position:absolute;
@@ -377,7 +492,7 @@ form .button button{
     .navbar{
         justify-content: left;  
         align-items: center;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .navbar img{
@@ -397,6 +512,7 @@ form .button button{
     .container{
         padding:50px 0 0 0;
         height:150vh;
+       
         
     }
 
@@ -416,13 +532,20 @@ form .button button{
         flex-direction: column;
         align-items: center;
         height:100vh;
-        border: 1px solid red;
+        /* border: 1px solid red; */
+    }
+
+    .container1 .image{
+        /* border:1px solid black; */
+        width:90%;
+
     }
 
     .container1 .info{
-        border: 1px solid red;
-        width:100%;
+        /* border: 1px solid blue; */
+        width:80%;
         justify-content: center;
+        
     }
     .container1 .info h1{
         text-align: center;
@@ -433,20 +556,41 @@ form .button button{
         
     }
 
-    .container1 .info h3{
-        text-align: center;
+    .container1 .info div div{
+        width:100vw;
+    } 
+
+
+    .container1 .info div h3{
+        text-align: start;
+        width:120vw;
+        padding:0 0px 0 50px;
+        /* border: 1px solid red; */
+    }
+
+    @keyframes appear{
+        0%{
+            width:0%;
+        }
+        100%{
+            width:100%;
+        }
+    
+       
     }
 
     .container1 .info div p{
-        border: 1px solid red;
+        /* border: 1px solid red; */
         /* text-align: center; */
-        width:100%;
+        width:90%;
+        margin: auto;
     }
 
-    .image{
-        border: 1px solid red;
-
+    #projects{
+        margin:150px 0 0 0;
     }
+
+    
 
 }
 
@@ -455,7 +599,7 @@ form .button button{
 {
         .container1 .image img{
             height:60%;
-            width:90%;
+            width:60%;
         
             
         }
@@ -464,30 +608,44 @@ form .button button{
             flex-direction: column;
             align-items: center;
             height:100vh;
-            border: 1px solid red;
+            z-index: 1000;
+            /* border: 1px solid red; */
         }
 
         .container1 .info{
-            border: 1px solid red;
-            width:100%;
-            justify-content: center;
+            /* border: 1px solid red; */
+            width:87%;
+            /* justify-content: center; */
+            align-items: center;
+            text-align: start;
         }
         .container1 .info h1{
-            text-align: center;
+            /* text-align: center; */
         }
+    
 
-        .container1 .info h3{
-            text-align: center;
+        .container1 .info div h3{
+            text-align: start;
+            width:120vw;
+            padding:0 0px 0 50px;
+            /* border: 1px solid red; */
         }
 
         .container1 .info div p{
-            border: 1px solid red;
+            /* border: 1px solid red; */
             /* text-align: center; */
-            width:100vw;
+            margin:auto;
+            width:85vw;
         }
 
+        #projects{
+            padding:50px 0 0 0 ;
+        }
+
+
+
         .image{
-            border: 1px solid red;
+            /* border: 1px solid red; */
 
         }
 }
