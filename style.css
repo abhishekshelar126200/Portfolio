@@ -58,6 +58,7 @@ header{
     align-items: center;
     justify-content: center;
     background-color: rgb(31, 36, 45);
+
     
 
 }
@@ -68,6 +69,7 @@ header{
     margin:20px 20px;
     /* width:100px; */
     /* border:1px solid black; */
+
 }
 
 .navbar ul .close{
@@ -83,6 +85,42 @@ header{
     text-decoration:none;
     color:white;
     font-size: 2.5vh;
+    text-shadow: 0px 0px 60px rgb(17, 184, 184);
+}
+
+#right_a{
+    position:absolute;
+    left:30px;
+    animation:menu_a 1s infinite alternate;
+    visibility: hidden;
+}
+
+#right{
+    color:white;
+    position:absolute;
+    left:60px;
+    animation:menu 1s infinite alternate;
+    visibility: hidden;
+}
+
+@keyframes menu_a {
+    0%{
+        left:20px
+    }
+
+    100%{
+        left:30px
+    }
+}
+
+@keyframes menu {
+    0%{
+        left:50px
+    }
+
+    100%{
+        left:60px
+    }
 }
 
 .navbar ul .download{
@@ -194,10 +232,13 @@ header{
 
 .container1 .info div h1{
     font-size: 7vh;
+    text-shadow: 0px 0px 20px rgb(17, 184, 184);
+
 }
 .container1 .info div h3{
     font-size: 4vh;
-    width:20vw;
+    width:40vw;
+    text-shadow: 0px 0px 60px rgb(17, 184, 184); ;
     /* border:1px solid white; */
    
     
@@ -211,6 +252,7 @@ header{
 .container1 .info div div{
     overflow: hidden;
     animation:appear 4s 0s infinite;
+    /* border: 1px solid red; */
 
 }
 
@@ -220,7 +262,7 @@ header{
         width:0%;
     }
     100%{
-        width:50%;
+        width:60%;
     }
 
    
@@ -229,6 +271,8 @@ header{
 .container1 .info div p{
     font-size: 3vh;
     font-weight: 600;
+    text-shadow: 0px 0px 60px rgb(17, 184, 184);
+
 }
 
 
@@ -294,23 +338,27 @@ main .projects .card{
     /* background-color: aliceblue; */
     background-color: rgb(50, 57, 70);
     color:white;
-    box-shadow: 0px 0px 5px 0px rgb(17, 184, 184); 
-}
-
-main .projects .card:hover{
-    height:320px;
-    width:370px;
+    cursor:pointer;
+    text-decoration: none;
     
 }
 
-.projects .card img{
-    height:100px;
-    width:150px;
+main .projects .card:hover{
+    height:302px;
+    width:352px;
+    box-shadow: 0px 0px 5px 0px rgb(17, 184, 184); 
+    transition:all 0.3s;
 }
 
-.projects .card a{
+.projects .card img{
+    height:90px;
+    width:120px;
+    border-radius: 50%;
+}
+
+.projects .card .spotify{
     text-decoration: none;
-    /* border: 1px solid black; */
+    border: 1px solid red;
     padding:10px;
     border-radius: 10px;
     color:white;
@@ -318,6 +366,27 @@ main .projects .card:hover{
     background-color: rgb(17, 184, 184);
 }
 
+.projects .card p{
+    /* text-shadow: 0px 0px 50px rgb(17, 184, 184); */
+    /* border:1px solid red; */
+    line-height: 3vh;
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.projects .card span{
+    visibility:hidden;
+    text-shadow: 0px 0px 60px rgb(17, 184, 184); ;
+    /* border: 1px solid rgb(17, 184, 184); */
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 5px 0px rgb(17, 184, 184);  */
+    padding:3px;
+
+}
 
 
 main .internship{
@@ -462,10 +531,24 @@ form .button button{
 
 @media (max-width:1000px){
 
+    #right{
+        visibility: visible;
+    }
+
+    #right_a{
+        visibility: visible;
+    }
+
     main .projects .card{
-        height:400px;
+        width:80vw;
     }
     
+    main .projects .card:hover{
+        width:81vw;
+        box-shadow: 0px 0px 5px 0px rgb(17, 184, 184); 
+        transition:all 0.3s;
+    }
+
     header .navbar ul{
         position:absolute;
         top:0;
@@ -564,7 +647,7 @@ form .button button{
     .container1 .info div h3{
         text-align: start;
         width:120vw;
-        padding:0 0px 0 50px;
+        padding:0 0px 0 5vw;
         /* border: 1px solid red; */
     }
 
@@ -595,7 +678,7 @@ form .button button{
 }
 
 
-@media (max-width:426px)
+@media (max-width:600px)
 {
         .container1 .image img{
             height:60%;
@@ -627,7 +710,7 @@ form .button button{
         .container1 .info div h3{
             text-align: start;
             width:120vw;
-            padding:0 0px 0 50px;
+            padding:0 0px 0 7vw;
             /* border: 1px solid red; */
         }
 
